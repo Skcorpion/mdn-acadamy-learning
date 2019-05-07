@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <title>My test page</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <style>
+      article {
+        display: inline-block;
+        width: 45%;
+        border: 1px dashed grey;
+        vertical-align: top;
+      }
+    </style>
+  </head>
+  <body>
+    <article>
+    <h1>Basic form widgets</h1>
+    <!-- select box(with optgroup) -->
+    <p>
+    <label for="groups">
+        <span>Select box with option groups:</span>
+    </label>
+    <select id="groups" name="groups">
+        <optgroup label="fruits">
+            <option>Banana</option>
+            <option selected>Cherry</option>
+            <option>Lemon</option>
+        </optgroup>
+        <optgroup label="vegetables">
+            <option>Carrot</option>
+            <option>Eggplant</option>
+            <option>Potato</option>
+        </optgroup>
+    </select> </p>
+
+    <!-- mutiple select box -->
+    <p>
+    <label for="multi">
+        <span>Select box allowing multiple selections:</span>
+    </label>
+    <select multiple id="multi" name="multi">
+        <option>Banana</option>
+        <option>Cherry</option>
+        <option>Lemon</option>
+    </select></p>
+
+    <!-- autocomplete box -->
+    <p>
+    <label for="myFruit">What's your favorite fruit?</label>
+    <input type="text" id="myFruit" name="myFruit" list="mySuggestions">
+    <datalist id="mySuggestions">
+            <option>Apple</option>
+            <option>Banana</option>
+            <option>Blackberry</option>
+            <option>Blueberry</option>
+            <option>Lemon</option>
+            <option>Lychee</option>
+            <option>Peach</option>
+            <option>Pear</option>
+    </datalist> 
+    </p>
+
+    <!-- datalist for IE below 10 and Safari -->
+    <p>
+            <label for="myFruit2">What is your favorite fruit? (With fallback)</label>
+            <input type="text" id="myFruit2" name="fruit" list="fruitList">
+                
+            <datalist id="fruitList">
+              <label for="suggestion">or pick a fruit</label>
+              <select id="suggestion" name="altFruit">
+                <option>Apple</option>
+                <option>Banana</option>
+                <option>Blackberry</option>
+                <option>Blueberry</option>
+                <option>Lemon</option>
+                <option>Lychee</option>
+                <option>Peach</option>
+                <option>Pear</option>
+              </select>
+            </datalist>
+    </p>
+    <!-- Checkable items -->
+    <!-- всегда помещать в fieldset общую группу -->
+    <!-- checkbox -->
+    <p>
+        <label for="carrots">carrots</label>
+        <input type="checkbox" checked id="carrots" name="carrots" value="carrots">
+    </p>
+    <!-- radio buttons -->
+    <fieldset> 
+        <legend>What is your favorite meal?</legend>
+        <ul style="list-style-type: none">
+          <li>
+            <label for="soup">
+            <input type="radio" checked id="soup" name="meal" value="soup"> 
+            <!-- все radiobuttons с одинаковым именем будут связаны(только одну можно выбрать) --> 
+            Soup</label> <!-- что бы суп стоял после, а не до -->
+          </li>
+          <li>
+            <label for="curry">Curry</label>
+            <input type="radio" id="curry" name="meal" value="curry">
+          </li>
+          <li>
+            <label for="pizza">Pizza</label>
+            <input type="radio" id="pizza" name="meal" value="pizza">
+          </li>
+        </ul>
+      </fieldset>
+
+
+    <!-- buttons -->
+    <form>
+      <p>
+        <button type="submit">
+          This a <br><strong>submit button</strong>
+        </button>
+      </p>
+      <p>
+        <input type="submit" value="This is a submit button">
+      </p>
+      <p>
+        <button type="reset">
+            This a <br><strong>reset button</strong>
+        </button>
+      </p>
+      <p>
+        <input type="reset" value="This is a reset button">
+      </p>
+      <p>
+        <button type="button">
+            This an <br><strong>anonymous button</strong>
+        </button>
+      </p>
+      <p>
+        <input type="button" value="This is an anonymous button">
+      </p>
+</form>
+</article>
+<article>
+  <h1>Advanced form widgets</h1>
+<!-- Advanced form widgets -->
+<!-- Number (have max/min and step attributes) -->
+<p>
+<label for="age">Age:</label>
+<input type="number" id="age" name="age" min="1" max="30" step="3">
+</p>
+
+<!-- Sliders -->
+<p>
+  <label for="beans">How many beans can you eat ?</label>
+  <input type="range" name="beans" id="beans" min="0" max="200" step="10">
+  <span class="beancount"></span>
+</p>
+<!-- This can be implemented using some simple JavaScript for counting -->
+<script>
+    var beans = document.querySelector('#beans');
+    var count = document.querySelector('.beancount');
+    count.textContent = beans.value;
+    beans.oninput = function() {
+      count.textContent = beans.value;
+    }
+ </script>
+
+<!--date and time picker-->
+<!--using min and max attributes-->
+<p>
+    <label for="myDate">Pick in range 2013-06-01 to 2013-08-31</label>
+    <input type="date" name="myDate" min="2013-06-01" max="2013-08-31" id="myDate">
+  </p>
+  <!--date and time without timezone-->
+  <p>
+    <label for="meet">Pick a date with time, but without time zone</label>
+    <input type="datetime-local" name="meet" id="meet">
+  </p>
+  <!--only month with year-->
+  <p>
+    <label for="month">Pick a month with a year</label>
+    <input type="month" name="month" id="month">
+  </p>
+  <!--time-->
+  <p>
+    <label for="time">Pick a time value</label>
+    <input type="time" name="time" id="time">
+</p>
+<!--week-->
+<p>
+    <label for="week">A week number and its year</label>
+    <input type="week" name="week" id="week">
+</p>
+
+<!-- Color picker-->
+<p>
+  <label for="color">Color</label>
+  <input type="color" name="color" id="color">
+</p>
+
+<!--Other widgets-->
+<!--File picker (accept - what types of file is accepted!)-->
+<!--(multiple) In this example, a file picker is created that requests graphic image files.
+   The user is allowed to select multiple files in this case.-->
+  <p>
+    <label for="file">Choose an image to upload</label>
+    <input type="file" multiple name="file" id="file" accept="image/*">
+  </p>
+
+<!--Hidden content-->
+<!--pieces of data that are sent with a form but not displayed to the user-->
+<div>
+  <input type="hidden" id="timestamp" name="timestamp" value="122255385">
+</div>
+
+<!--Meters and progress bars-->
+<!--Progress-->
+<progress max="1000" value="654">654/1000</progress>
+<!--The content inside the <progress> element is a fallback for browsers that don't support
+   the element and for assistive technologies to vocalize it.-->
+
+<!--Meters-->
+<p>
+<meter min="0" max="100" value="30" low="33" high="66" optimum="80">30</meter>
+<meter min="0" max="100" value="50" low="33" high="66" optimum="50">50</meter>
+<meter min="0" max="100" value="10" low="33" high="66" optimum="50">10</meter>
+</p>  
+</article>
+</body>
+</html>

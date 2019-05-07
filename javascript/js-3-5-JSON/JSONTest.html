@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Simple JSON example</title>
+    <style>
+        html {
+        background: linear-gradient(to bottom right, rgb(105, 206, 231), rgb(0, 131, 55)) no-repeat;
+        background-attachment: fixed;
+        font-family: sans-serif;
+    }
+      body {
+        width: 50%;
+        max-width: 800px;
+        min-width: 480px;
+        margin: 20px auto;
+    }
+    </style>
+  </head>
+
+  <body>
+    
+    <script>
+     /* 1. JSON is purely a data format — it contains only properties, no methods.
+        2. "" - work, '' - don't
+        3. Even a single misplaced comma or colon can cause a JSON file to go wrong!
+        4. Unlike in JavaScript code in which object properties may be unquoted, in JSON, 
+        only quoted strings may be used as properties. 
+        5. JSON can actually take the form of any data type that is valid for inclusion inside JSON, 
+        not just arrays or objects. So for example, a single string or number would be a valid JSON object.*/
+    var superHeroes = {
+      "squadName" : "Super hero squad",
+      "homeTown" : "Metro City",
+      "formed" : 2016,
+      "secretBase" : "Super tower",
+      "active" : true,
+      "members" : [
+        {
+          "name" : "Molecule Man",
+          "age" : 29,
+          "secretIdentity" : "Dan Jukes",
+          "powers" : [
+            "Radiation resistance",
+            "Turning tiny",
+            "Radiation blast"
+          ]
+        },
+        {
+          "name" : "Madame Uppercut",
+          "age" : 39,
+          "secretIdentity" : "Jane Wilson",
+          "powers" : [
+            "Million tonne punch",
+            "Damage resistance",
+            "Superhuman reflexes"
+          ]
+        },
+        {
+          "name" : "Eternal Flame",
+          "age" : 1000000,
+          "secretIdentity" : "Unknown",
+          "powers" : [
+            "Immortality",
+            "Heat Immunity",
+            "Inferno",
+            "Teleportation",
+            "Interdimensional travel"
+          ]
+        }
+      ]
+    };
+
+    // test JSON 
+
+    console.log(superHeroes.homeTown);
+    console.log(superHeroes['active']);
+    console.log(superHeroes['members'][1]['powers'][2]);
+    console.log(superHeroes['members'][2]['name'],'-',superHeroes['members'][2]['age'],'old, have', superHeroes['members'][2]['powers'][4],'power');
+
+    // Arrays as JSON
+
+    let superHeroes2 = [
+        {
+        "name": "Molecule Man",
+        "age": 29,
+        "secretIdentity": "Dan Jukes",
+        "powers": [
+        "Radiation resistance",
+        "Turning tiny",
+        "Radiation blast"
+        ]
+    },
+    {
+        "name": "Madame Uppercut",
+        "age": 39,
+        "secretIdentity": "Jane Wilson",
+        "powers": [
+        "Million tonne punch",
+        "Damage resistance",
+        "Superhuman reflexes"
+        ]
+    }
+    ];
+
+    console.log(superHeroes2[0]['powers'][0]);
+    </script>
+  </body>
+</html>

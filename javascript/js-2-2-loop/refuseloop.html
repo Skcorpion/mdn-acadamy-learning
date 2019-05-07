@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <title>My page</title>
+
+    <style>
+      html {
+        background: linear-gradient(to bottom right, rgb(105, 206, 231), rgb(0, 25, 85)) no-repeat;
+        background-attachment: fixed;
+        font-family: sans-serif;
+        }
+      body {
+        width: 50%;
+        max-width: 800px;
+        min-width: 480px;
+        margin: 20px auto;
+      }
+    </style>
+    </head>
+    <body>
+        <h1>Our birthday!</h1>
+        <p class="admitted"></p>
+        <p class="refused"></p>
+
+    <script>
+        const people = ['Chris', 'Anne', 'Colin', 'Terri', 'Phil', 'Lola', 'Sam', 'Kay', 'Bruce'];
+    
+        const admitted = document.querySelector('.admitted');
+        const refused = document.querySelector('.refused');
+        admitted.textContent = 'Admit: ';
+        refused.textContent = 'Refuse: ';
+        
+        for ( let i = 0; i < people.length; i++ ) {
+            if (people[i] === 'Phil' || people[i] === 'Lola'){
+                refused.textContent += people[i] + ', ';
+            } else {
+                admitted.textContent += people[i] + ', ';
+            }
+        }
+
+        refused.textContent = refused.textContent.slice(0,refused.textContent.length - 2) + '.';
+        admitted.textContent = admitted.textContent.slice(0,admitted.textContent.length - 2) + '.';
+
+    </script>
+    </body>
+    </html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Function library example</title>
+  <style>
+    html {
+        background: linear-gradient(to bottom right, rgb(105, 206, 231), rgb(0, 25, 85)) no-repeat;
+        background-attachment: fixed;
+        font-family: sans-serif;
+    }
+    body {
+        width: 50%;
+        max-width: 800px;
+        min-width: 480px;
+        margin: 20px auto;
+    }  
+    input {
+      font-size: 2em;
+      margin: 10px 1px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <input class="numberInput" type="text">
+  <p></p>
+  
+  <script>
+    var input = document.querySelector('.numberInput');
+    var para = document.querySelector('p');
+
+    function squared(num) {
+        return num * num;
+    }
+
+    function cubed(num) {
+        return num * num * num;
+    }
+
+    function factorial(num) {
+        let x = num;
+        while (x > 1) {
+            num *= x-1;
+            x--;
+        }
+        return num;
+    }
+    function circumference(num) {
+        return Math.round((355 / 113) * (2 * num));
+    }
+    // Event: print out the information about the number entered into the text input
+    input.onchange = function() {
+        let num = input.value;
+        if (isNaN(num)) {
+            para.textContent = 'You need to enter a number!';
+        } else {
+            para.textContent = num + ' squared is ' + squared(num) + '. ' +
+                               num + ' cubed is ' + cubed(num) + '. ' +
+                               num + ' factorial is ' + factorial(num) + '. ' +
+                               num + ' radius circumference is ' + circumference(num) + '.'
+        }
+    }
+  </script>
+</body>
+</html>

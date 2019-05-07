@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Function start</title>
+    <style>
+    html {
+        background: linear-gradient(to bottom right, rgb(105, 206, 231), rgb(0, 25, 85)) no-repeat;
+        background-attachment: fixed;
+        font-family: sans-serif;
+        }
+    body {
+        width: 50%;
+        max-width: 800px;
+        min-width: 480px;
+        margin: 20px auto;
+    }
+      .msgBox {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 242px;
+        background: #eee;
+      }
+      .msgBox p {
+        line-height: 1.5;
+        padding: 10px 20px;
+        padding-left: 82px;
+        color: #333;
+        background-position: 25px center;
+        background-repeat: no-repeat;
+      }
+      .msgBox button {
+        background: none;
+        border: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 1.1rem;
+        color: #aaa;
+      }
+    </style>
+  </head>
+  <body>
+    <button>Display message box</button>
+
+    <script>
+      function displayMessage(msgText, msgType) {
+          let html = document.querySelector('html');
+
+          let panel = document.createElement('div'); // <div> - outer container of our message box.
+          panel.setAttribute('class', 'msgBox'); // <div class='msgBox'>
+          html.appendChild(panel); /* We specify the panel <div> as the child we want to append inside 
+          the <html> element. We need to do this as the element we created won't just appear 
+          on the page on its own — we need to specify where to put it.*/
+
+          let msg = document.createElement('p');
+          msg.textContent = msgText; //'This is a message box';
+          panel.appendChild(msg); // as children of the panel <div>
+
+          let closeBtn = document.createElement('button');
+          closeBtn.textContent = 'x';
+          panel.appendChild(closeBtn); // as children of the panel <div>
+
+          closeBtn.onclick = function() { /* the onclick handler is a property 
+          available on the button (or in fact, any element on the page) */
+              panel.parentNode.removeChild(panel);
+          }
+
+          if (msgType === 'warning') {
+              msg.style.backgroundImage = 'url(icons/warning.png)';
+              panel.style.backgroundColor = 'red';
+          } else if (msgType === 'chat') {
+              msg.style.backgroundImage = 'url(icons/chat.png)';
+              panel.style.backgroundColor = 'aqua';
+          } else {
+              msg.style.paddingLeft = '20px';
+          }
+      }
+
+      let btn = document.querySelector('button');
+      btn.onclick = function() {
+          displayMessage('Woo, this is a different message!');
+          displayMessage('Your inbox is almost full — delete some mails', 'warning');
+          displayMessage('Brian: Hi there, how are you today?', 'chat');
+      }
+      //btn.onclick = displayMessage; // stick function to button 
+      // delete (), because function run with the page
+      // displayMessage() -> displayMessage;
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <title>My page</title>
+
+    <style>
+      html {
+        background: linear-gradient(to bottom right, rgb(105, 174, 231), rgb(0, 25, 85)) no-repeat;
+        background-attachment: fixed;
+        font-family: sans-serif;
+        }
+      body {
+        width: 50%;
+        max-width: 800px;
+        min-width: 480px;
+        margin: 20px auto;
+      }
+    </style>
+    </head>
+    <body>
+        <button>Start machine</button>
+        <p>The machine is stopped.</p>
+        <div class="output">
+            <ul></ul>
+            <p></p>
+            <input type="search" name="search" id="search">
+            <button>search</button>
+            <ul class="second"></ul>
+        </div>
+
+        <script>
+            let shopping = ['bread', 'milk', 'cheese', 'hummus', 'noodles'];
+            let sequence = [1, 1, 2, 3, 5, 8, 13];
+            let random = ['tree', 877, [0, 1, 2]];
+            shopping[0]; // return 'bread'
+            shopping[0] = 'tahini';
+            shopping; // now return [ "tahini", "milk", "cheese", "hummus", "noodles" ]
+            
+            // Multidimensional array
+            random[2][2]; // return 2
+
+            sequence.length; // 7
+            for (let i = 0; i < sequence.length; i++) {
+                //console.log(sequence[i]);
+            }
+
+            // split() method
+            let myData = 'Manchester,London,Liverpool,Birmingham,Leeds,Carlisle';
+            let myArray = myData.split(',');
+            myArray; // [ "Manchester", "London", "Liverpool", "Birmingham", "Leeds", "Carlisle" ]
+            
+            myArray.length; // 6
+            myArray[0]; // "Manchester"
+            myArray[1]; // "London"
+            myArray[myArray.length-1]; // "Carlisle"
+
+            // join() method (opposite way)
+            let myNewData = myArray.join(',');
+            myNewData; // "Manchester,London,Liverpool,Birmingham,Leeds,Carlisle"
+
+            // toString method (you can't specify different separators)
+            let dogNames = ['Rocket','Flash','Bella','Slugger'];
+            dogNames.toString(); // "Rocket,Flash,Bella,Slugger"
+
+
+            // Adding and removing array items
+            // push() + add item at the end
+            myArray.push('Cardiff');
+            myArray;
+            myArray.push('Mozalerra','Ludovic');
+            myArray;
+            // If you wanted to store the new array length in a variable
+            newLength = myArray.push('Bistroll');
+            myArray;
+            newLength; // 10
+
+            // pop() - remove last item
+            myArray.pop();
+            let removedItem = myArray.pop();
+            myArray;
+            removedItem; // "Ludovic"
+
+
+            // unshift() + add item at the start
+            myArray.unshift('Medive');
+            myArray;
+
+            // shift() - remove first item
+            removedItem = myArray.shift();
+            myArray;
+            removedItem; // "Medive"
+
+// First exercise
+
+var list = document.querySelector('.output ul');
+var totalBox = document.querySelector('.output p');
+var total = 0;
+list.innerHTML = '';
+totalBox.textContent = '';
+// number 1
+let products = ['Underpants:6.99',
+                'Socks:5.99',
+                'T-shirt:14.99',
+                'Trousers:31.99',
+                'Shoes:23.99'];
+
+for (var i = 0; i < products.length ; i++) { // number 2
+  // number 3
+  var subArray = products[i].split(':');
+  var name = subArray[0];
+  var price = Number(subArray[1]);
+  // number 4
+  total += price;
+    
+  // number 5
+  itemText = name + ' — $' + price;
+  
+  var listItem = document.createElement('li');
+  listItem.textContent = itemText;
+  list.appendChild(listItem);
+}
+
+totalBox.textContent = 'Total: $' + total.toFixed(2);
+
+
+// Second exercise
+var list = document.querySelector('.output ul.second');
+var searchInput = document.querySelector('.output input');
+var searchBtn = document.querySelector('.output button');
+
+list.innerHTML = '';
+
+var myHistory = [];
+
+searchBtn.onclick = function() {
+  // we will only allow a term to be entered if the search input isn't empty
+  if (searchInput.value !== '') {
+    // number 1
+    myHistory.unshift(searchInput.value);
+    // empty the list so that we don't display duplicate entries
+    // the display is regenerated every time a search term is entered.
+    list.innerHTML = '';
+
+    // loop through the array, and display all the search terms in the list
+    for (var i = 0; i < myHistory.length; i++) {
+      itemText = myHistory[i];
+      var listItem = document.createElement('li');
+      listItem.textContent = itemText;
+      list.appendChild(listItem);
+    }
+
+    // If the array length is 5 or more, remove the oldest search term
+    if (myHistory.length >= 5) {
+      // number 2
+	myHistory.pop();
+    }
+
+    // empty the search input and focus it, ready for the next term to be entered
+    searchInput.value = '';
+    searchInput.focus();
+  }
+}
+
+        </script>
+    </body>
+    </html>

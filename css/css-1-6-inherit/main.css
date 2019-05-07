@@ -1,0 +1,36 @@
+body {
+    color: green;
+}
+
+.my-class-1 a {
+    color: inherit;
+}
+
+.my-class-2 a {
+    color: initial;
+}
+
+.my-class-3 a {
+    color: unset;
+}
+
+.my-class-4 a {
+    color: revert;
+}
+
+/* 0201[specificity] - most importante rule */
+#outer #inner a {
+    background-color: initial; /* set initial browser value for background-color - white */
+    color: red;
+  }
+/* 0113[specificity] - less importante */ 
+  #outer div ul .nav a {
+    background-color: blue;
+    padding: 5px;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+/* 0004[specificity] */
+  div div li a {
+    color: yellow;
+  }

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Object-oriented JavaScript example</title>
+    <style>
+        html {
+        background: linear-gradient(to bottom right, rgb(105, 206, 231), rgb(0, 25, 85)) no-repeat;
+        background-attachment: fixed;
+        font-family: sans-serif;
+    }
+      body {
+        width: 50%;
+        max-width: 800px;
+        min-width: 480px;
+        margin: 20px auto;
+    }  
+    </style>
+  </head>
+
+  <body>
+    <p>This example requires you to enter commands in your browser's JavaScript console (see <a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools">What are browser developer tools</a> for more information).</p>
+  </body>
+
+    <script>
+        let person = {
+            name: { // object inside object
+                first: 'Roms', 
+                last: 'Alex'
+            },
+            age: 26,
+            gender: 'male',
+            interests: ['programming','music'],
+            bio: function() { // this. = person.
+                alert(this.name.first + ' ' + this.name.last + ' is ' + this.age + ' years old. He likes ' + this.interests[0] + ' and ' + this.interests[1] + '.');
+            },
+            greeting: function() {
+                alert('Hi! I\'m ' + this.name.first + '.');
+            }
+        };
+        // Add name & value 
+
+        let myDataName = 'height';
+        let myDataValue = '1.78m';
+        person[myDataName] = myDataValue;
+
+        // Retrieving (or getting) object members
+
+        // person.name.first -same- person['name']['first']
+        // person.interests[0]
+        // person.bio()
+
+
+        // Set (update)
+
+        // person.age = 45;
+        // person['name']['last'] = 'Bober';
+
+        // Create completely new members
+
+        // person['eyes'] = 'blue';
+        // person.farewell = function() { alert('Bye everybody!'); }
+    </script>
+</html>

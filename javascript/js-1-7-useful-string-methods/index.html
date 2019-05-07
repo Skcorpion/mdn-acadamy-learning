@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <title>My page</title>
+
+    <style>
+      html {
+        background: linear-gradient(to bottom right, rgb(121, 185, 18), rgb(0, 0, 0)) no-repeat;
+        background-attachment: fixed;
+        font-family: sans-serif;
+        }
+      body {
+        width: 50%;
+        max-width: 800px;
+        min-width: 480px;
+        margin: 20px auto;
+      }
+    </style>
+    </head>
+    <body>
+        <button>Start machine</button>
+        <p>The machine is stopped.</p>
+        
+        <div class="output">
+            <ul></ul>
+            <ul class="second"></ul>
+            <ul class="third"></ul>
+        </div>
+
+        <script>
+            let browserType = 'Mozilla';
+
+            browserType.length; // length = 7;
+            browserType[0]; // return - M 
+            browserType[browserType.length-1]; // return - a (last character)
+            
+            browserType.indexOf('zilla'); // return - 2 (M0 o1 z2..a7)
+            browserType.indexOf('vanilla'); // return - (-1): this return when substring is no found!
+            if(browserType.indexOf('mozilla') !== -1){
+                // do stuff with all mozilla
+            }
+
+            browserType.slice(0,3); // return - 'Moz'
+            browserType.slice(2); // return - 'zilla'
+
+            // changing case 
+            let radData = 'My NaMe Is MuD';
+            radData.toLowerCase(); // "my name is mud"
+            radData.toUpperCase(); // "MY NAME IS MUD"
+
+            // replace
+            browserType.replace('Moz','van'); // "vanilla"
+            browserType = browserType.replace('Moz','van'); // change browserType forever
+
+// First exercise
+
+var list = document.querySelector('.output ul');
+list.innerHTML = '';
+var greetings = ['Happy Birthday!',
+                 'Merry Christmas my love',
+                 'A happy Christmas to all the family',
+                 'You\'re all I want for Christmas',
+                 'Get well soon'];
+
+for (var i = 0; i < greetings.length; i++) {
+  var input = greetings[i];
+  if (greetings[i].indexOf('Chris') !== -1) { // we add .indexOf('Chris') !== -1
+    var listItem = document.createElement('li');
+    listItem.textContent = input;
+    list.appendChild(listItem);
+  }
+} 
+
+// Second exercise
+
+var list = document.querySelector('.output ul.second');
+list.innerHTML = '';
+var cities = ['lonDon', 'ManCHESTer', 'BiRmiNGHAM', 'liVERpoOL'];
+
+for (var i = 0; i < cities.length; i++) {
+  var input = cities[i];
+  lower = input.toLowerCase();
+  let firstLetter = lower.slice(0,1);
+  var result = lower.replace(firstLetter,firstLetter.toUpperCase());
+  var listItem = document.createElement('li');
+  listItem.textContent = result;
+  list.appendChild(listItem);
+} 
+
+// Third exercise
+
+var list = document.querySelector('.output ul.third');
+list.innerHTML = '';
+var stations = ['MAN675847583748sjt567654;Manchester Piccadilly',
+                'GNF576746573fhdg4737dh4;Greenfield',
+                'LIV5hg65hd737456236dch46dg4;Liverpool Lime Street',
+                'SYB4f65hf75f736463;Stalybridge',
+                'HUD5767ghtyfyr4536dh45dg45dg3;Huddersfield'];
+
+for (var i = 0; i < stations.length; i++) {
+  var input = stations[i];
+  // write your code just below here   
+  let code = input.slice(0,3);
+  let semiC = input.indexOf(';');
+  let name = input.slice(semiC+ 1);
+  var result = code + ': ' + name;
+  var listItem = document.createElement('li');
+  listItem.textContent = result;
+  list.appendChild(listItem);
+}
+        </script>
+    </body>
+    </html>

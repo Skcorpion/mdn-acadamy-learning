@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <title>My page</title>
+
+    <style>
+      html {
+        background: linear-gradient(to bottom right, rgb(185, 169, 18), rgb(0, 0, 0)) no-repeat;
+        background-attachment: fixed;
+        font-family: sans-serif;
+        }
+      body {
+        width: 50%;
+        max-width: 800px;
+        min-width: 480px;
+        margin: 20px auto;
+      }
+    </style>
+    </head>
+    <body>
+        <button>Start machine</button>
+        <p>The machine is stopped.</p>
+
+        <script>
+            let string = 'The revolution will not be televised.';
+            let badString = string;
+
+            // Escaping characters (\)
+            let bigmouth = 'I\'ve got no right to take my place...';
+            
+            //Concatenation strings
+            let one = 'Hello, ';
+            let two = 'how are you?';
+            let joined = one + two;
+
+            let multiple = one + one + one + two;
+            
+            let response = one + 'I\'m fine - ' + two;
+            //
+            let button = document.querySelector('button');
+
+            button.onclick = function() {
+                let name = prompt('What is your name?');
+                alert('Hello ' + name + ', nice to see you!');
+            }
+            //
+            let myDate = '19' + '67'; // "1967", string
+
+            // 'Number' convert string to number (if can)
+            let myNumDate = Number(myDate);
+            
+            // 'toString()' convert number to string
+            let myNum = 777;
+            let myString = myNum.toString();
+
+        </script>
+    </body>
+    </html>

@@ -1,0 +1,11 @@
+html {
+    font-family: sans-serif;
+    background: linear-gradient(to bottom, rgb(169, 176, 182), rgb(80, 61, 184)) no-repeat;
+    background-attachment: fixed;
+}
+
+body { 
+    width: 90%;
+    min-width: 800px;
+    margin: 0 auto;
+}

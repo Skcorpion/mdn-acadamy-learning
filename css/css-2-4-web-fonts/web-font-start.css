@@ -1,0 +1,51 @@
+@font-face {
+    font-family: '2-Questa_Regular';
+    src: url('fonts/2-Questa_Regular-webfont.woff2') format('woff2'),
+         url('fonts/2-Questa_Regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+@font-face {
+    font-family: 'introheadr-base';
+    src: url('fonts/introheadr-base-webfont.woff2') format('woff2'),
+         url('fonts/introheadr-base-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+/* General setup */
+
+html {
+    margin: 0;
+    font-size: 10px;
+    font-family: sans-serif;
+}
+
+body {
+    width: 80%;
+    min-width: 800px;
+    margin: 0 auto;
+}
+
+/* Typography */
+
+h1, h2 {
+    font-family: 'Coiny', cursive;
+}
+
+h1 {
+    font-size: 5.2rem;
+  }
+  
+  h2 {
+    font-size: 3.4rem;
+  }
+  
+  p {
+    font-family: '2-Questa_Regular', sans-serif; 
+    font-size: 2.4rem;
+    line-height: 1.6;
+   
+  }
+

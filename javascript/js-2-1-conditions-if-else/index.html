@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <title>My page</title>
+
+    <style>
+      html {
+        /*background: linear-gradient(to bottom right, rgb(130, 193, 245), rgb(0, 25, 85)) no-repeat;
+        background-attachment: fixed;*/
+        color: rgb(130, 193, 245);
+        background-color: rgb(0, 25, 85);
+        font-family: sans-serif;
+        } 
+      body {
+        width: 50%;
+        max-width: 800px;
+        min-width: 480px;
+        margin: 20px auto;
+      }
+      .elseif {
+        height: 150px;
+        background: #FFC125;
+        color: #5E2612;
+        padding: 10px;
+        margin: 10px;
+      }
+      .switch {
+        height: 150px;
+        background: #5E2612;
+        color: #FFC125;
+        padding: 10px;
+        margin: 10px;
+      }
+
+    </style>
+    </head>
+    <body>
+        <label for='theme'>Select theme: </label>
+        <select id="theme">
+            <option value="darkBlue" selected>Dark Blue</option>
+            <option value="blue">Blue</option>
+        </select>
+        <h1>This is my website</h1>
+
+        <div class='elseif'>
+            <label for="weather">Select the weather type today:</label>
+            <select id="weather">
+                <option value="">--Make a choice--</option>
+                <option value="sunny">Sunny</option>
+                <option value="rainy">Rainy</option>
+                <option value="snowing">Snowing</option>
+                <option value="overcast">Overcast</option>
+            </select>
+            <p></p>
+        </div>
+
+        <div class='switch'>
+                <label for="weatherS">Select the weather type today:</label>
+                <select id="weatherS">
+                    <option value="">--Make a choice--</option>
+                    <option value="sunny">Sunny</option>
+                    <option value="rainy">Rainy</option>
+                    <option value="snowing">Snowing</option>
+                    <option value="overcast">Overcast</option>
+                </select>
+                <p></p>
+            </div>
+
+        <script>
+            // else if
+            let select = document.querySelector('.elseif select');
+            let para = document.querySelector('.elseif p');
+
+            select.addEventListener('change', setWeather);
+
+            function setWeather() {
+                let choice = select.value;
+                let temperature = Math.floor(Math.random() * 100) + 1;
+
+                if (choice === 'sunny') {
+                    if (temperature < 50) { // if inside if
+                        para.textContent = 'It is ' + temperature + ' degrees outside — nice and sunny. Let\'s go out to the beach, or the park, and get an ice cream.';
+                    } else if (temperature >= 50) {
+                        para.textContent = 'It is ' + temperature + ' degrees outside — REALLY HOT! If you want to go outside, make sure to put some suncream on.';
+                    }
+                } else if (choice === 'rainy') {
+                    para.textContent = 'Rain is falling outside; take a rain coat and a brolly, and don\'t stay out for too long.';
+                } else if (choice === 'snowing') {
+                    para.textContent = 'The snow is coming down — it is freezing! Best to stay in with a cup of hot chocolate, or go build a snowman.';
+                } else if (choice === 'overcast') {
+                    para.textContent = 'It isn\'t raining, but the sky is grey and gloomy; it could turn any minute, so take a rain coat just in case.';
+                } else {
+                    para.textContent = '';
+                }
+            }
+
+            // switch
+            let selectS = document.querySelector('.switch select');
+            let paraS = document.querySelector('.switch p');
+
+            selectS.addEventListener('change', setWeatherS);
+
+            function setWeatherS() {
+                let choiceS = selectS.value;
+
+                switch(choiceS) {
+                    case 'sunny': 
+                    paraS.textContent = 'It is nice and sunny outside today. Wear shorts! Go to the beach, or the park, and get an ice cream.';
+                    break;
+
+                    case 'rainy':
+                    paraS.textContent = 'Rain is falling outside; take a rain coat and a brolly, and don\'t stay out for too long.';
+                    break;
+
+                    case 'snowing': 
+                    paraS.textContent = 'The snow is coming down — it is freezing! Best to stay in with a cup of hot chocolate, or go build a snowman.';
+                    break;
+
+                    case 'overcast':
+                    paraS.textContent = 'It isn\'t raining, but the sky is grey and gloomy; it could turn any minute, so take a rain coat just in case.';
+                    break;
+
+                    default:
+                    paraS.textContent = '';
+                }
+            }
+
+            // ternary operator
+            // ( condition ) ? run this code : run this code instead
+            let isBirthday = true;
+            let greeting = ( isBirthday ) ? 'Happy birthday Mrs. Smith — we hope you have a great day!' : 'Good morning Mrs. Smith.';
+            console.log(greeting); // back first message
+            
+            // Ternary example
+            let selectTheme = document.querySelector('select#theme');
+            let html = document.querySelector('html');
+            //document.body.style.padding = '10px';
+
+            function update(bgColor, textColor) {
+                html.style.backgroundColor = bgColor;
+                html.style.color = textColor;
+            }
+
+            selectTheme.onchange = function() {
+                (selectTheme.value === 'blue') ? update('rgb(130, 193, 245)','rgb(0, 25, 85)') : update('rgb(0, 25, 85)','rgb(130, 193, 245)');
+            }
+
+
+            // variable condition itself
+            let getSex = false;
+            if (getSex) { // don't need to explicitly specify '=== true'
+                console.log('Now, you growing up boy.');
+            }
+            else {
+                console.log('So, you\'r wizzard ?)');
+            }
+
+            // (AND - '&&'); (OR - '||'); (NOT - '!')
+            let iceCreamVanOutside = false;
+            let houseStatus = 'on fire';
+            if (!(iceCreamVanOutside || houseStatus === 'on fire')) { // ! and || 
+                console.log('Probably should just stay in then.');
+            } else { 
+                console.log('You should leave the house quickly.');
+            }
+
+            /* don't work cuz 7 always true
+             if (x === 5 || 7 || 10 || 20) { 
+                 run my code 
+             } */
+
+            // work example
+            let x = 5;
+            if (x === 5 || x === 7 || x === 10 || x == 20) {
+                // run my code
+            }
+
+        </script>
+    </body>
+    </html>

@@ -1,0 +1,18 @@
+html {
+    font-family: sans-serif;
+    background-color:black;
+    color: white;
+  }
+  body {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  section{
+    padding: 20px;
+  }
+img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+  }

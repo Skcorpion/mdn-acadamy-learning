@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Mapquest example</title>
+    <style>
+      html {
+        background: linear-gradient(to bottom right, rgb(202, 105, 231), rgb(0, 25, 85)) no-repeat;
+        background-attachment: fixed;
+        font-family: sans-serif;
+    }
+      body {
+        width: 50%;
+        max-width: 800px;
+        min-width: 480px;
+        margin: 20px auto;
+    } 
+      #map {
+        width: 600px;
+        height: 600px;
+      }
+    </style>
+    <!-- connect to the API functionality to use it with js -->
+    <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>
+    <script>
+      // 1. The basic part of the example
+      var L; //?
+      
+      window.onload = function() {
+          // key for access to api
+          L.mapquest.key = 'hEkq09C2u7NJmClKWrJAEN64cyPWHEeC';
+
+          // 'map' refers to a <div> element with the ID map
+          var map = L.mapquest.map('map', {
+          center: [53.480759, -2.242631],
+          layers: L.mapquest.tileLayer('hybrid'),
+          zoom: 12
+        });
+
+          // Add control
+          map.addControl(L.mapquest.satelliteControl());
+          //map.addControl(L.mapquest.searchControl());
+          //map.addControl(L.mapquest.control({ position: 'bottomright'}));
+          /* mapquest.control() method just creates 
+          a simple full-featured control set */
+
+          // Add icon
+          // two parameters
+          // array - coordinate, option object - icon property
+          L.marker([53.480759, -2.242631], {
+              icon: L.mapquest.icons.marker({
+                  /*The icon is defined using an mapquest.icons.marker() method, 
+                  which as you can see contains information such as color and size of marker.*/
+                  primaryColor: '#22407F',
+                  secondaryColor: '#3B5998',
+                  shadow: true,
+                  size: 'md',
+                  symbol: 'A'
+              })
+          })
+          .bindPopup('This is Manchester!')
+          .addTo(map);
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Simple Mapquest example</h1>
+
+    <div id="map"></div>
+  </body>
+</html>

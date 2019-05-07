@@ -1,0 +1,106 @@
+*{
+    box-sizing: border-box; /* размер боксов по границе */
+}
+
+html {
+    font-family: sans-serif;
+    background: linear-gradient(to bottom, rgb(91, 139, 179), rgb(80, 61, 184)) no-repeat;
+    background-attachment: fixed;   
+}
+
+body {
+    width: 70%;
+    min-width: 800px;
+    margin: 0 auto;
+}
+
+div {
+    width: 220px;
+    padding: 20px;
+    margin: 10px;
+    line-height: 2;
+    background-color: rgb(245, 245, 114);
+    text-align: center;
+    display: inline-block;
+    border-style: dashed;
+}
+
+.first {
+    border-radius: 20px;
+}
+
+.second {
+    border-radius: 70px / 30px;
+}
+
+.third {
+    border-radius: 30px 70px / 90px 10px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 60px;
+}
+
+.four {
+    border-radius: 50px 25px 12px;
+}
+
+.five {
+    border-bottom-left-radius: 40px;
+}
+
+.six {
+    border-radius: 100% 40% / 70% 10% ;
+}
+
+/* Border image */
+
+.border-image {
+    box-sizing: initial;
+    width: 300px;
+    padding: 20px;
+    margin: 10px auto;
+    line-height: 3;
+    background-color: rgb(245, 245, 114);
+    text-align: center;
+    /* border-related properties */
+    border: 20px solid black;
+    background-clip: padding-box;
+    border-image-source: url(https://mdn.mozillademos.org/files/13060/border-image.png);
+    border-image-slice: 40;
+    border-image-repeat: round; /* stretch, repeat, space */
+    /* border-image-width: 10px; */
+    /* border-image-outset: 10px; */
+}
+
+/* Menu */
+
+ul {
+    padding: 0;
+}
+
+li {
+    display: inline;
+}
+
+a {
+    outline: none;
+    text-decoration: none;
+    display: inline-block;
+    width: 200px;
+    text-align: center;
+    line-height: 3;
+    color: black;
+    border: 1px solid  black;
+}
+
+a:link, a:visited, a:focus {
+    background: rgb(124, 218, 255);
+}
+
+a:hover {
+    background: rgb(80, 146, 172);
+}
+
+a:active {
+    background: orange;
+    color: white;
+}

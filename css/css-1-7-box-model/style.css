@@ -1,0 +1,93 @@
+/* General styles */
+
+html {
+  font-family: sans-serif;
+  min-height: 100%;
+  background: linear-gradient(to bottom, rgb(91, 139, 179), rgb(80, 61, 184)) no-repeat;
+     
+}
+
+body {
+    margin: 0;
+  }
+  body > header, footer, main {
+    padding: 20px;
+    font-size: 20px;
+    border: 20px solid rgba(0,0,0,0.5);
+  }
+  /* specific boxes */
+  header, footer {
+    background-color: blue;
+    color: white;
+  }
+  main {
+    background-color: yellow;
+    margin-top: -50px;
+    margin-bottom: 10px;
+    padding: 1%;
+    border-color: red;
+    width: 400px;
+  }
+
+  header {
+    width: 600px;
+    margin: 1%;
+    margin-bottom: 0px;
+  }
+
+  footer {
+    margin-top: -10px;
+    width: 800px;
+  }
+
+  /* Overflow(прокрутка) */
+
+  p {
+    width: 400px;
+    height: 2.5em;
+    padding: 1em;
+    border: 1px solid black;
+  } 
+
+  .autoscroll { overflow: auto; }
+  .clipped { overflow: hidden; }
+  .default { overflow: visible; }
+
+  /* Background-clip(Обрезка заднего фона) */
+
+  #outer div {
+    width: 60px;
+    height: 60px;
+    border: 20px solid rgba(0,0,0,0.5);
+    outline: 1px dashed red; /* outline не меняет бокс модели, а накладывается на нее */
+    padding: 20px;
+    margin: 20px 0;
+
+    background-size: 140px;
+    background-position: center;
+    background-image: url('https://mdn.mozillademos.org/files/11947/ff-logo.png');
+    background-color: gold;
+  }
+
+  .default-box { background-clip: border-box; }
+  .padding-box { background-clip: padding-box; }
+  .content-box { background-clip: content-box; }
+
+  /* Box models */
+  
+  #box-models p {
+    width: 650px;
+    padding: 1em;
+    border: 1px solid black;
+  } 
+  
+  span {
+    background-color: yellow;
+    /* That makes the box visible */
+    border: 1px solid black;
+  }
+
+  .inline { display: inline; }
+  .block { display: block; } /* display - задает тип блока(по дефолту block) */
+  .inline-block { display: inline-block; }
+  

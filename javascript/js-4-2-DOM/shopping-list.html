@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Shopping list example</title>
+    <style>
+        html {
+        background: linear-gradient(to bottom right, rgb(202, 105, 231), rgb(0, 25, 85)) no-repeat;
+        background-attachment: fixed;
+        font-family: sans-serif; 
+        }
+        body {
+        width: 50%;
+        max-width: 800px;
+        min-width: 480px;
+        margin: 20px auto;
+    } 
+      li {
+        margin-bottom: 10px;
+      }
+      li button {
+        font-size: 8px;
+        margin-left: 20px;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+
+    <h1>My shopping list</h1>
+
+    <div>
+      <label for="item">Enter a new item:</label>
+      <input type="text" name="item" id="item">
+      <button>Add item</button>
+    </div>
+
+    <ul>
+
+    </ul>
+
+    <script>
+       let list = document.querySelector('ul');
+       let input = document.querySelector('input');
+       let btn = document.querySelector('button');
+
+       btn.addEventListener('click', function() {
+           let storeInput = input.value;
+           input.value = '';
+
+           let listItem = document.createElement('li');
+           let listSpan = document.createElement('span');
+           let listButton = document.createElement('button');
+           list.appendChild(listItem);
+           listItem.appendChild(listSpan);
+           listItem.appendChild(listButton);
+
+           listSpan.textContent = storeInput;
+           listButton.textContent = 'Delete';
+
+           listButton.addEventListener('click', function(e) {
+               list.removeChild(listItem);
+           })
+
+           input.focus();
+           
+       })
+
+    </script>
+  </body>
+</html>

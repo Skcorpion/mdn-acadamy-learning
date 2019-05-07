@@ -1,0 +1,84 @@
+/* Multiple backgrounds
+
+You separate your different background definitions with commas:*/
+html {
+    background: url(image.png) no-repeat 99% center,
+                url(background-tile.png),
+                linear-gradient(to bottom, yellow, #dddd00 50%, orange);
+    background-color: yellow;
+}
+
+/* _____________________________________________ 
+Borders
+------------------
+Border radius
+*/
+div {
+/* 1st value is top left and bottom right corners,
+   2nd value is top right and bottom left  */
+   border-radius: 20px 10px;
+   /* 1st value is top left corner, 2nd value is top right
+      and bottom left, 3rd value is bottom right  */
+   border-radius: 20px 10px 50px;
+   /* top left, top right, bottom right, bottom left */
+   border-radius: 20px 10px 50px 0; 
+
+    border-radius: 30px 70px / 90px 10px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 60px;
+}
+
+/* ________________________________________________
+
+Styling tables
+
+*/
+table {table-layout: fixed;
+width: 100%; border-collapse: collapse;}
+
+thead th:nth-child(1) {width: 14%;}
+thead th:nth-child(2) {width: 28%;}
+thead th:nth-child(3) {width: 28%;}
+thead th:nth-child(4) {width: 28%;}
+
+/* zebra striping */
+tbody tr td:nth-of-type(1) {
+background-color: rgba(255, 217, 0, 0.397);}
+tbody tr td:nth-of-type(2) {
+background-color: rgba(0, 255, 85, 0.397);}
+tbody tr td:nth-of-type(3) {
+background-color: rgba(255, 0, 242, 0.349);}
+
+/* caption */
+caption {caption-side: bottom;}
+
+
+/* ____________________________________________
+Advanced box effects
+------------------
+ Inset box shadow */
+ button {
+    box-shadow: 1px 1px 1px black,
+    inset 2px 3px 5px rgba(0,0,0,0.3),
+    inset -2px -3px 5px rgba(255,255,255,0.5);
+ }
+
+ /* ----------------
+ drop-shadow filter
+ */
+ .filter {
+    -webkit-filter: drop-shadow(5px 5px 1px rgba(0,0,0,0.7));
+    filter: drop-shadow(5px 5px 1px rgba(0,0,0,0.7));
+}
+
+/* text-clip filter */
+h2 {width: 250px;
+    height: 250px;
+    text-align: center;
+    line-height: 250px;
+    font-size: 75px;
+    display: inline-block;
+    background: url(https://mdn.mozillademos.org/files/13090/colorful-heart.png) no-repeat center;}
+.text-clip {
+/*-webkit-?*/background-clip: text;
+    -webkit-text-fill-color: transparent;}

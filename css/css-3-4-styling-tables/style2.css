@@ -1,0 +1,103 @@
+html {
+    font-family: sans-serif;
+    background: linear-gradient(to bottom, rgb(169, 176, 182), rgb(80, 61, 184)) no-repeat;
+    background-attachment: fixed;
+}
+
+body {
+    padding-top: 5%; 
+    width: 90%;
+    min-width: 800px;
+    margin: 0 auto;
+}
+
+/* spacing */
+
+table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;  
+}
+
+thead th:nth-child(1) {
+    width: 14%;
+}
+
+thead th:nth-child(2) {
+    width: 28%;
+}
+
+thead th:nth-child(3) {
+    width: 28%;
+}
+
+thead th:nth-child(4) {
+    width: 28%;
+}
+
+th, tbody td {
+    padding: 20px;
+    border: 1px solid black;
+}
+
+/* typography */
+
+html {
+    font-family: 'helvetica neue', helvetica, arial, sans-serif;
+}
+
+th {
+    font-family: 'Lobster', cursive;
+    letter-spacing: 2px;
+    font-size: 1.5rem;
+}
+
+tbody td {
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+table p {
+    font-size: 14px;
+}
+
+tfoot td {
+    text-align: center;
+    padding: 20px;
+    color: rgb(216, 198, 36);
+    text-shadow: 1px 1px 1px black;
+}
+
+/* Graphics and color */
+
+thead th, tbody th {
+    background-color: rgba(0, 0, 0, 0.473);
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.5));
+    color: white;
+    text-shadow: 1px 1px 1px black;
+}
+
+/* zebra striping */
+
+tbody tr td:nth-of-type(1) {
+    background-color: rgba(255, 217, 0, 0.397);
+}
+
+tbody tr td:nth-of-type(2) {
+    background-color: rgba(0, 255, 85, 0.397);
+}
+
+tbody tr td:nth-of-type(3) {
+    background-color: rgba(255, 0, 242, 0.349);
+}
+
+/* styling the caption */
+
+caption {
+    font-family: 'Lobster', cursive;
+    padding: 20px;
+    /* caption-side: bottom; */
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <title>Number guessing game</title>
+
+    <style>
+      html {
+        background: linear-gradient(to bottom right, rgb(185, 169, 18), rgb(0, 0, 0)) no-repeat;
+        background-attachment: fixed;
+        font-family: sans-serif;
+        }
+      body {
+        width: 50%;
+        max-width: 800px;
+        min-width: 480px;
+        margin: 20px auto;
+      }
+    </style>
+    </head>
+    <body>
+        <button>Press me</button>
+
+        <script>
+            const button = document.querySelector('button');
+
+            button.onclick = function() {
+                let name = prompt('What is your name?');
+                alert('Hello ' + name + ', nice to see you!');
+            }
+
+            // Just declaring the veriables
+            let myName;
+            var mySize;
+            var myFlour;
+            let finalColor;
+            let initialOutputValue;
+            let audio3;
+            let year;
+
+            let myAge = 25.8;
+            let myString = 'You need to wrap text in single or double qoute marks.'
+            let iAmAlive = false;
+            let testBoolean = 6 < 3;
+            let myNameArray = ['Indy', 'Bob', 'Jim']; // myNameArray[0]; should return 'Indy'
+            let myNumberArray = [10, 15, 20];
+
+            const dayInWeek = 7;
+            const hoursInDay = 24; // you can't change it
+            
+            // Objects represent object(dog) and contains info about its (name, breed, etc.)
+            let dog = { name : 'Spot', breed : 'Dalmatian'}; //can use 'dog.name;'
+
+            // You can declare and initialize a variable at the same time
+            let myDog = 'Rover';
+
+            // You can declare 'var' before initialization(it's might be confusing)
+            // but not - 'let'(and it's good) 
+            petName = 'Indy';
+            function logName() {
+                console.log(petName);
+            }
+            logName();
+            var petName; // 'let' shouldn't work
+
+            // Secondly, you can redeclare 'var'
+            var myName1 = 'Chris';
+            var myName1 = 'Bob';
+            // But 'let' you can't
+            let myName2 = 'Chris';
+            //let myName2 = 'Bob';
+            //so
+            myName2 = 'Bob';
+
+        </script>
+    </body>
+    </html>

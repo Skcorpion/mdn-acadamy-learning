@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Object-oriented JavaScript example</title>
+    <style>
+        html {
+        background: linear-gradient(to bottom right, rgb(105, 206, 231), rgb(0, 25, 85)) no-repeat;
+        background-attachment: fixed;
+        font-family: sans-serif;
+    }
+      body {
+        width: 50%;
+        max-width: 800px;
+        min-width: 480px;
+        margin: 20px auto;
+    }  
+    </style>
+  </head>
+
+  <body>
+    <p>This example requires you to enter commands in your browser's JavaScript console (see <a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools">What are browser developer tools</a> for more information).</p>
+    
+    <!--process of creating an object instance from a class is called instantiation-->
+  </body>
+
+    <script>
+       // define a person with a normal function
+       /*function createNewPerson(name) {
+           let obj = {};
+           obj.name = name;
+           obj.greeting = function() {
+               alert('Hi! I\'m ' + obj.name + '.');
+           };
+           return obj;
+       } */
+
+       // Constructor functions
+       // A constructor function name usually starts with a capital letter
+       function Person(name) {
+           this.name = name;
+           this.greeting = function() {
+              alert('Hi! I\'m ' + this.name + '.');
+           };
+       }
+
+       // now create a new person by calling this function
+       let slava = new Person('Slava');
+       console.log(slava.name);
+       console.log(slava.greeting()); 
+
+       let person1 = new Person('Vladik');
+       let person2 = new Person('Mamon');
+       // person1.name;
+       // person1.greeting();
+    </script>
+</html>

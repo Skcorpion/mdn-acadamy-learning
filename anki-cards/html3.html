@@ -1,0 +1,66 @@
+<!-- Simple table -->
+<table>
+    <caption>Test table</caption>
+    <colgroup>
+        <col span="2">
+        <col style="background-color:#DCC48E; border:4px solid black;">
+        <col style="width:42px;" span="2">
+    </colgroup>
+    <tr>
+        <td>&nbsp;</td>
+        <th>Col header</th>
+        <th>Col header</th>
+        <th>Col header</th>
+        <th>Col header</th>
+    </tr>
+    <tr>
+        <th colspan="2">Double row header</th>
+        <td>data</td>
+        <td>data</td>
+        <td>data</td>
+        <td>data</td>
+    </tr>
+    <tr>
+        <td>data</td>
+        <td>data</td>
+        <td>data</td>
+        <td>data</td>
+    </tr>
+    <tr>
+        <th>Row header</th>
+        <td>data</td>
+        <td>data</td>
+        <td>data</td>
+        <td>data</td>
+    </tr>
+    <tr>
+        <th>Row header</th>
+        <td>data</td>
+        <td>data</td>
+        <td>data</td>
+        <td>data</td>
+    </tr>
+</table>
+
+<!--Adding structure with <thead>, <tfoot>, and <tbody>-->
+
+<!-- The scope attribute -->
+<thead>
+    <tr>
+        <th scope="col">Purchase</th>
+        <th scope="col">Location</th>
+        <th scope="col">Date</th>
+        <th scope="col">Evaluation</th>
+        <th scope="col">Cost (€)</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <th scope="row">Haircut</th>
+        <td>Hairdresser</td>
+        <td>12/09</td>
+        <td>Great idea</td>
+        <td>30</td>
+    </tr>
+</tbody>
+<!-- althought scope="" have colgroup and rowgroup values-->

@@ -1,0 +1,36 @@
+!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Return</title>
+    <style>
+    html {
+        background: linear-gradient(to bottom right, rgb(105, 206, 231), rgb(0, 25, 85)) no-repeat;
+        background-attachment: fixed;
+        font-family: sans-serif;
+        }
+    body {
+        width: 50%;
+        max-width: 800px;
+        min-width: 480px;
+        margin: 20px auto;
+    }
+</style>
+  </head>
+  <body>
+    <h1>Return</h1>
+
+    <script>
+        function rundomNumber(number) {
+            return Math.floor(Math.random()*number);
+        }
+
+        // or the same but first more compact
+
+       /* function rundomNumber(number) {
+            let result = Math.floor(Math.random()*number);
+            return result;
+        } */
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+body {
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+/* Shifts the list to the left abroad? */
+ul {
+    padding: 0;
+}
+
+/* Отступы, тип списка(греческие цифры тд.) */
+li {
+    padding: 3px;
+    margin-bottom: 5px;
+    list-style-type: lower-roman;
+}
+
+/* Делаем ссылки черными без подчеркивания */
+/*a {
+    text-decoration: none;
+    color:black;
+}*/
+
+/* Visited links with same color as non visited */
+a:visited {
+    color: blue;
+}
+
+/* Odd list items */
+li:nth-of-type(2n+1) {
+    background-color: #eee;
+    font-weight: bold;
+}
+
+/* Even list items */
+li:nth-of-type(2n) {
+    background-color: #ccc;
+    font-weight: lighter;
+}
+
+/* We highlight the link when it is hovered (mouse), activated or focused */
+a:hover,
+a:active,
+a:focus {
+    /*text-decoration: underline;*/
+    color: red;
+}
+
+/* Pseudo-elements */
+[href^=http]::after {
+    content: '⤴';
+  }
+
+p::first-line {
+    font-weight: bold;
+}
+
+p::first-letter {
+    font-size: 3em;
+    border: 1px solid black;
+    background: red;
+    display: block;
+    float: left;
+    padding: 2px;
+    margin-right: 4px;
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <title>My page</title>
+
+    <style>
+      html {
+        background: linear-gradient(to bottom right, rgb(105, 206, 231), rgb(0, 25, 85)) no-repeat;
+        background-attachment: fixed;
+        font-family: sans-serif;
+        }
+      body {
+        width: 50%;
+        max-width: 800px;
+        min-width: 480px;
+        margin: 20px auto;
+      }
+    </style>
+    </head>
+    <body>
+        <h1>My Loop Site</h1>
+        <p></p>
+
+        <label for="search">Search by contact name: </label>
+        <input id="search" type="text">
+        <button>Search</button>
+
+        <p class="sec"></p>
+
+        <div class='con'>
+            <label for="number">Enter number: </label>
+            <input id="number" type="text">
+            <button>Generate integer squares</button>
+              
+            <p>Output: </p>
+        </div>
+
+        <script>
+            const cats = ['Bill', 'Jeff', 'Pete', 'Biggles', 'Jasmin'];
+            let info = 'My cats are called ';
+
+            const para = document.querySelector('p');
+
+            for(let i = 0; i < cats.length; i++) {
+                if (i === cats.length - 1) {
+                info += cats[i] + '.';
+                } else {
+                info += cats[i] + ', ';
+                }
+            }
+
+            para.textContent = info;
+
+            /* While (all parts just spread)
+            Revrited cats example 
+
+            let i = 0; 
+
+            while (i < cats.length) {
+                if (i === cat.length - 1) {
+                    info += cats[i] + '.'; 
+                } else {
+                    info += cats[i] + ', ';
+                }
+
+                i++;
+            }
+             */
+
+            /* do.. while (exit condition in the end)
+
+            let i = 0;
+
+            do {
+                if (i === cat.length - 1) {
+                    info += cats[i] + '.'; 
+                } else {
+                    info += cats[i] + ', ';
+                }
+
+                i++;
+            } while (i < cats.length);
+            */
+
+            
+
+            // Loop with break
+            const contacts = ['Chris:2232322', 'Sarah:3453456', 'Bill:7654322', 'Mary:9998769', 'Dianne:9384975'];
+            const paraSec = document.querySelector('p.sec');
+            const input = document.querySelector('input');
+            const btn = document.querySelector('button');
+
+            btn.addEventListener('click', function() {
+                let searchName = input.value;
+                input.value = ''; //delete from input form
+                //input.focus();
+                for (let i = 0; i < contacts.length; i++) {
+                    let splitContacts = contacts[i].split(':');
+                    if (splitContacts[0] === searchName) {
+                        paraSec.textContent = splitContacts[0] + '\'s number is ' + splitContacts[1] + '.';
+                        break;
+                    } else {
+                        paraSec.textContent = 'Contact not found.';
+                    }
+                }
+            });
+            // Skipping iteration with continue
+            const paraCon = document.querySelector('.con p');
+            const inputCon = document.querySelector('.con input');
+            const btnCon = document.querySelector('.con button');
+
+            btnCon.addEventListener('click',function(){
+                paraCon.textContent = 'Output: ';
+                let num = inputCon.value;
+                inputCon.value = '';
+                inputCon.focus();
+                for (let i = 1; i <= num; i++) {
+                    let sqRoot = Math.sqrt(i);
+                    if (Math.floor(sqRoot) !== sqRoot) {
+                        continue;
+                    }
+
+                    paraCon.textContent += i + ' ';
+                }
+            });
+        </script>
+    </body>
+    </html>

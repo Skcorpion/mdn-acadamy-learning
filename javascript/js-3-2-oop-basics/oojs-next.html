@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Object-oriented JavaScript example</title>
+    <style>
+        html {
+        background: linear-gradient(to bottom right, rgb(105, 206, 231), rgb(0, 25, 85)) no-repeat;
+        background-attachment: fixed;
+        font-family: sans-serif;
+    }
+      body {
+        width: 50%;
+        max-width: 800px;
+        min-width: 480px;
+        margin: 20px auto;
+    }  
+    </style>
+  </head>
+
+  <body>
+    <p>This example requires you to enter commands in your browser's JavaScript console (see <a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools">What are browser developer tools</a> for more information).</p>
+    
+    <!--process of creating an object instance from a class is called instantiation-->
+  </body>
+
+    <script>
+        // creating our finished constructor
+       function Person(first, last, age, gender, interests) {
+           this.name = {
+               'first' : first,
+               'last' : last
+           };
+           this.age = age;
+           this.gender = gender;
+           this.interests = interests;
+           this.bio = function() {
+            // first part of text
+            let string = this.name.first + ' ' + this.name.last + ' is ' + this.age + ' years old. ';
+            // add pronoun
+            let pronoun;
+            if (this.gender === 'male'||this.gender === 'Male'||this.gender === 'm'||this.gender === 'M') {
+              pronoun = 'He likes ';
+            } else if (this.gender === 'female'||this.gender === 'Female'||this.gender === 'f'||this.gender === 'F') {
+              pronoun = 'She likes ';
+            } else {
+              pronoun = 'They likes ';
+            };
+
+            string += pronoun;
+
+            // check interests length
+            if (this.interests.length === 1) {
+              string += this.interests[0] + '.'; 
+            } else if (this.interests.length === 2) {
+              string += this.interests[0] + ' and ' + this.interests[1] + '.';
+            } else {
+              // if more the 2 create loop 
+              for (let i = 0; i < this.interests.length; i++) {
+                // for last element
+                if (i === this.interests.length - 1) {
+                  string += 'and ' + this.interests[i] + '.';
+                // and all else 
+                } else {
+                  string += this.interests[i] + ', ';
+                }
+              }
+            }
+            // finally
+            alert(string);
+           };
+           this.greeting = function() {
+            alert('Hi! I\'m ' + this.name.first + '.');
+           };
+       }
+
+       // create an object instance
+       let person1 = new Person('Jeremy', 'Sibu', 32, 'identitys', ['anime']);
+
+
+
+      // Other ways to create object instances
+      // The Object() constructor
+      let person2 = new Object();
+      // add properties and methods
+      person2.name = 'Chris';
+      person2['age'] = 38;
+      person2.greeting = function() {
+        alert('Hi! I\'m ' + this.name + '.');
+      };
+      // You can also pass an object literal to the Object() constructor as a parameter
+      let person3 = new Object({
+      name: 'Chris',
+      age: 38,
+      greeting: function() {
+        alert('Hi! I\'m ' + this.name + '.');
+      }
+    });
+
+
+      // Using the create() method
+      let person4 = Object.create(person1); // You'll see that person4 has been created based on person1
+     
+      person4.__proto__ // This will return the person1
+
+      // The Constructor property 
+      let person5 = new person1.constructor('Karen', 'Stephenson', 26, 'female', ['playing drums', 'mountain climbing']);
+      //You won't need to use it often, but it can be really useful when you want to create a new instance and don't have a reference to the original constructor easily available for some reason.
+
+      person1.constructor.name; // return the name of father - 'Person' 
+      
+    </script>
+</html>

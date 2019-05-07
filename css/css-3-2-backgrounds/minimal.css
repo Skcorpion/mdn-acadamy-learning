@@ -1,0 +1,37 @@
+html {
+    font-family: sans-serif;
+    min-height: 100%;
+    background: url(herbal-spa-treatment-leaves.png) space repeat 0 100%,
+    linear-gradient(to bottom, rgb(91, 139, 179), rgb(80, 61, 184)) no-repeat;
+    
+    
+}
+
+body {
+    width: 70%;
+    min-width: 800px;
+    margin: 0 auto;
+}
+
+h1, p {
+    padding: 20px;
+}
+
+h1 {
+    background-color: yellow;
+    background-image: linear-gradient(to right, yellow, green 40%, black 70%, blue);
+}
+
+p#rep {
+    background-image: repeating-linear-gradient(to right, yellow, green 50px, yellow 100px);
+}
+
+p#short {
+    background: yellow linear-gradient(to bottom, yellow,#dddd00 50%, orange) no-repeat left center scroll;
+}
+
+p#multy {
+    background-color: yellow;
+    background: url(fire-ball-icon.png) no-repeat 99% center,
+    linear-gradient(to bottom, yellow, #dddd00 50%, orange);
+}

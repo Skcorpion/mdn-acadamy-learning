@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <title>Event Intro</title>
+  <style>
+    body {
+        width: 50%;
+        max-width: 800px;
+        min-width: 480px;
+        margin: 20px auto;
+    }
+  </style>
+</head>
+<body>
+    <h1>Rundom background</h1>
+    <button>Click me~!</button>
+    <button>Click me~!</button>
+    <button>Click me~!</button>
+  
+  <script>
+    let btn = document.querySelector('button');
+    let buttons = document.querySelectorAll('button'); //qSAll - for many button at the time
+
+    function random(num) {
+        return Math.floor(Math.random()*(num + 1));
+    }
+
+    function bgChange(e) {
+        let rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+/*document.body.*/e.target.style.backgroundColor = rndCol; /* e.target is incredibly 
+        useful when you want to set the same event handler on multiple elements and 
+        do something to all of them when an event occurs on them.*/
+        console.log(e); // event object
+    }
+    // new addEventListener
+    // Document Object Model (DOM) Level 2 Events Specification
+    btn.addEventListener('click',bgChange);
+    btn.removeEventListener('click',bgChange);
+
+    // Second, you can also register multiple handlers for the same listener
+   /* myElement.addEventListener('click', functionA);
+    myElement.addEventListener('click', functionB); */
+
+    //it is perfectly appropriate to put all the code inside the addEventListener() 
+    //function, in an anonymous function
+
+   /* btn.addEventListener('click', function() {
+      let rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+      document.body.style.backgroundColor = rndCol;
+    }); */
+    
+    // .onclick
+    for ( let i = 0; i < buttons.length ; i++) {
+      buttons[i].onclick = bgChange;
+    }
+    
+
+    //btn.onclick = bgChange;
+    //btn.onfocus = bgChange;
+    //btn.onblur = bgChange;
+    //btn.ondblclick = bgChange;
+    //window.onkeypress = bgChange; only work on window. (press any key)
+    //window.onkeyup = bgChange;   (when you press key)
+    //window.onkeydown = bgChange; (when you let off key)
+    //btn.onmouseover = bgChange;
+    //btn.onmouseout = bgChange;
+  </script>
+</body>
+</html>

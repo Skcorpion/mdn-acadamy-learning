@@ -1,0 +1,341 @@
+<!--Your first HTML form -->
+_________________________________________
+
+<!--To build our contact form, we will use the following HTML elements: 
+    <form>, <label>, <input>, <textarea>, and <button>.-->
+
+    <form action="/my-handling-form-page" method="post">
+
+    </form>
+<!-- The "action" attribute defines the location (URL) where the form's collected data should be sent when it is submitted.
+     The "method" attribute defines which HTTP method to send the data with (it can be "get" or "post").-->
+
+-------------------------------------------------------------
+<!-- The <label>, <input>, and <textarea> elements -->
+
+        <form action="/my-handling-form-page" method="post">
+            <div>
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="user_name">
+            </div>
+            <div>
+              <label for="mail">E-mail:</label>
+              <input type="email" id="mail" name="user_mail">
+            </div>
+            <div>
+              <label for="msg">Message:</label>
+              <textarea id="msg" name="user_message"></textarea>
+            </div>
+          </form>
+
+
+<!-- Value -->
+          <input type="text" value="by default this element is filled with this text" />
+                                            <!-- vs -->
+          <textarea>by default this element is filled with this text</textarea>
+-------------------------------------------------------------
+<!-- The <button> element -->
+        <div class="button">
+            <button type="submit">Send your message</button>
+        </div>
+
+<!-- You'll see that the <button> element also accepts a type attribute — 
+    this accepts one of three values: submit, reset, or button.-->
+<!-- 
+    A click on a submit button (the default value) sends the form's data to the web page defined by the action attribute of the <form> element.
+    A click on a reset button resets all the form widgets to their default value immediately. From a UX point of view, this is considered bad practice.
+    A click on a button button does... nothing! That sounds silly, but it's amazingly useful for building custom buttons with JavaScript.
+-->
+
+_________________________________________
+
+<!-- How to structure an HTML form -->
+
+<form>
+        <h1>Payment form</h1>
+        <p>Required fields are followed by <strong><abbr title="required">*</abbr></strong>.</p>
+        <section>
+            <h2>Contact information</h2>
+            <fieldset>
+                <legend>Title</legend>
+                <ul>
+                    <li>
+                        <label for="title_1">
+                            <input type="radio" id="title_1" name="title" value="M.">
+                            Mister
+                        </label>
+                    </li>
+                    <li>
+                        <label for="title_2">
+                            <input type="radio" id="title_2" name="title" value="Ms.">
+                            Miss
+                        </label>
+                    </li>
+                </ul>
+            </fieldset>
+            <p>
+                <label for="name">
+                    <span>Name: </span>
+                    <strong><abbr title="required">*</abbr></strong>
+                </label>
+                <input type="text" id="name" name="username">
+            </p>
+            <p>
+                <label for="email">
+                    <span>E-mail: </span>
+                    <strong><abbr title="required">*</abbr></strong>
+                </label>
+                <input type="email" id="mail" name="usermail">
+            </p>
+            <p>
+                <label for="pwd">
+                    <span>Password: </span>
+                    <strong><abbr title="required">*</abbr></strong>
+                </label>
+                <input type="password" id="pwd" name="password">
+            </p>
+        </section>
+        <section>
+            <h2>Payment information</h2>
+            <p>
+                <label for="card">
+                    <span>Card type:</span>
+                </label>
+                <select id="card" name="usercard">
+                    <option value="visa">Visa</option>
+                    <option value="mc">Mastercard</option>
+                    <option value="amex">American Express</option>
+                </select>
+            </p>
+            <p>
+                <label for="number">
+                    <span>Card number:</span>
+                    <strong><abbr title="required">*</abbr></strong>
+                </label>
+                <input type="number" id="number" name="cardnumber">
+            </p>
+            <p>
+                <label for="date">
+                    <span>Expiration date:</span>
+                    <strong><abbr title="required">*</abbr></strong>
+                    <em>formatted as mm/dd/yy</em>
+                </label>
+                <input type="date" id="date" name="expiration">
+            </p>
+        </section>
+        <p class="button"> <button type="submit">Validate the payment</button> </p>
+    </form>
+
+<!-- The <fieldset> and <legend> elements -->
+        <fieldset>
+                <legend>Fruit juice size</legend>
+                <p>
+                  <input type="radio" name="size" id="size_1" value="small">
+                  <label for="size_1">Small</label>
+                </p>
+                <p>
+                  <input type="radio" name="size" id="size_2" value="medium">
+                  <label for="size_2">Medium</label>
+                </p>
+                <p>
+                  <input type="radio" name="size" id="size_3" value="large">
+                  <label for="size_3">Large</label>
+                </p>
+              </fieldset>
+
+<!-- The <label> element -->
+              <div>
+                    <label for="username">
+                        <span>Name:</span>
+                        <input id="username" type="text" name="username">
+                        <abbr title="required">*</abbr>
+                    </label>
+                </div>
+            
+                <!-- But this is probably best: -->
+                <div>
+                    <label for="username">Name: <abbr title="required">*</abbr></label>
+                    <input id="username" type="text" name="username">
+                </div>
+
+    
+_________________________________________
+
+<!-- The native form widgets -->
+
+<!-- Common attributes: autofocus, disabled, name, value(the element's initial value)
+-->
+-------------------------------------------------------------
+<!-- Text input fields -->
+<!-- Common behaviours:
+        readonly
+        placeholder - grey text on the background
+        size (the physical size of the box) and length (the maximum number of characters)
+        spell checking - if the browser supports it
+-->
+
+<!-- input type="text" - default -->
+<input type="text" id="comment" name="comment" value="I'm a text field">
+
+<!-- other types of input:
+        email - attribute multiple (@email1, @email2)
+        password
+        search
+        tel
+        url
+-->
+
+-------------------------------------------------------------
+<!-- <textarea> -->
+        <textarea cols="30" rows="10" wrap="soft"></textarea>
+-------------------------------------------------------------
+
+<!-- Drop-down content -->
+-------------------------------------------------------------
+<!-- Select box -->
+<select multiple id="simple" name="simple"> <!-- Multiple choice select box -->
+    <option>Banana</option>
+    <option>Cherry</option>
+    <option>Lemon</option>
+</select>
+<!-- optgroup -->
+<select id="groups" name="groups">
+    <optgroup label="fruits">
+        <option>Banana</option>
+        <option selected>Cherry</option>
+        <option>Lemon</option>
+    </optgroup>
+    <optgroup label="vegetables">
+        <option>Carrot</option>
+        <option>Eggplant</option>
+        <option>Potato</option>
+    </optgroup>
+</select>
+
+-------------------------------------------------------------
+<!-- Autocomplete box -->
+
+<label for="myFruit">What's your favorite fruit?</label>
+<input type="text" name="myFruit" id="myFruit" list="mySuggestion"> <!-- list="mySuggestion" -->
+<datalist id="mySuggestion">
+  <option>Apple</option>
+  <option>Banana</option>
+  <option>Blackberry</option>
+  <option>Blueberry</option>
+  <option>Lemon</option>
+  <option>Lychee</option>
+  <option>Peach</option>
+  <option>Pear</option>
+</datalist>
+
+<!-- Datalist support and fallbacks (it isn't supported in IE
+     versions below 10, and Safari still doesn't support it at the time of writing)-->
+
+<label for="myFruit">What is your favorite fruit? (With fallback)</label>
+<input type="text" id="myFruit" name="fruit" list="fruitList">
+    
+<datalist id="fruitList">
+  <label for="suggestion">or pick a fruit</label>
+  <select id="suggestion" name="altFruit">
+    <option>Apple</option>
+    <option>Banana</option>
+    <option>Blackberry</option>
+    <option>Blueberry</option>
+    <option>Lemon</option>
+    <option>Lychee</option>
+    <option>Peach</option>
+    <option>Pear</option>
+  </select>
+</datalist>
+
+-------------------------------------------------------------
+<!-- Checkable items -->
+
+    <!-- Checkable items -->
+    <!-- всегда помещать в fieldset общую группу -->
+    <!-- checkbox -->
+    <p>
+            <label for="carrots">carrots</label>
+            <input type="checkbox" checked id="carrots" name="carrots" value="carrots">
+        </p>
+        <!-- radio buttons -->
+        <fieldset> 
+            <legend>What is your favorite meal?</legend>
+            <ul style="list-style-type: none">
+              <li>
+                <label for="soup">
+                <input type="radio" checked id="soup" name="meal" value="soup"> 
+                <!-- все radiobuttons с одинаковым именем будут связаны(только одну можно выбрать) --> 
+                Soup</label> <!-- что бы суп стоял после, а не до -->
+              </li>
+              <li>
+                <label for="curry">Curry</label>
+                <input type="radio" id="curry" name="meal" value="curry">
+              </li>
+              <li>
+                <label for="pizza">Pizza</label>
+                <input type="radio" id="pizza" name="meal" value="pizza">
+              </li>
+            </ul>
+          </fieldset>
+
+    -------------------------------------------------------------
+    <!-- Advanced form widgets -->
+    <!-- Number (have max/min and step attributes) -->
+        <p>
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" min="1" max="30" step="3">
+        </p>
+    -------------------------------------------------------------
+    <!-- Sliders -->
+
+        <p>
+        <label for="beans">How many beans can you eat ?</label>
+        <input type="range" name="beans" id="beans" min="0" max="200" step="10">
+        <span class="beancount"></span>
+        </p>
+        <!-- This can be implemented using some simple JavaScript for counting -->
+        <script>
+            var beans = document.querySelector('#beans');
+            var count = document.querySelector('.beancount');
+            count.textContent = beans.value;
+            beans.oninput = function() {
+            count.textContent = beans.value;
+            }
+        </script>
+    -------------------------------------------------------------
+    <!-- Color picker-->
+<p>
+        <label for="color">Color</label>
+        <input type="color" name="color" id="color">
+      </p>
+      -------------------------------------------------------------
+      <!--Other widgets-->
+      <!--File picker (accept - what types of file is accepted!)-->
+      <!--(multiple) In this example, a file picker is created that requests graphic image files.
+         The user is allowed to select multiple files in this case.-->
+        <p>
+          <label for="file">Choose an image to upload</label>
+          <input type="file" multiple name="file" id="file" accept="image/*">
+        </p>
+      -------------------------------------------------------------
+      <!--Hidden content-->
+      <!--pieces of data that are sent with a form but not displayed to the user-->
+      <div>
+        <input type="hidden" id="timestamp" name="timestamp" value="122255385">
+      </div>
+      -------------------------------------------------------------
+      <!--Meters and progress bars-->
+      <!--Progress-->
+      <progress max="1000" value="654">654/1000</progress>
+      <!--The content inside the <progress> element is a fallback for browsers that don't support
+         the element and for assistive technologies to vocalize it.-->
+      -------------------------------------------------------------
+      <!--Meters-->
+      <p>
+      <meter min="0" max="100" value="30" low="33" high="66" optimum="80">30</meter>
+      <meter min="0" max="100" value="50" low="33" high="66" optimum="50">50</meter>
+      <meter min="0" max="100" value="10" low="33" high="66" optimum="50">10</meter>
+      </p>  
+
+    

@@ -1,0 +1,27 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Embedding images</title>
+</head>
+<body>
+    <div class="figure"> <!-- Not the best semantic way too add image description.. -->
+        <img src="https://raw.githubusercontent.com/mdn/learning-area/master/html/multimedia-and-embedding/images-in-html/dinosaur_small.jpg"
+            alt="The head and torso of a dinosaur skeleton; it has a large head with long sharp teeth"
+            width="200"
+            height="171">
+        <!-- title="A T-Rex on display in the Manchester University Museum" inside img bad solution at all! -->
+        
+        <p>A T-Rex on display in the Manchester University Museum</p> <!-- ..here -->
+    </div>
+
+    <figure> <!-- Elements in HTML5 created to provide a semantic container for figures, and clearly link the figure to the caption.. -->
+        <img src="https://raw.githubusercontent.com/mdn/learning-area/master/html/multimedia-and-embedding/images-in-html/dinosaur_small.jpg"
+            alt="The head and torso of a dinosaur skeleton; it has a large head with long sharp teeth"
+            width="200"
+            height="171">
+
+        <figcaption>A T-Rex on display in the Manchester University Museum</figcaption> <!-- ..here -->
+    </figure>
+</body>
+</html>
